@@ -6,20 +6,21 @@ function handleClick(e) {
   const timeString = document.getElementById('time').value
   displayMessage(greet(timeString))
 }
+// no event.preventDefault()?
 
-/* End Given Code, don't edit above here...*/
 
-/* Write your implementation of greet() */
-function greet(timeString) {
-  let hoursMinutes = timeString.split(':');
-  const hour = parseInt(hoursMinutes[0]);
-  if (hour < 12) return "Good Morning";
-  else if (hour > 17) return "Good Evening";
- else return "Good Afternoon";
-  }
-
-/* Write your implementation of displayMessage() */
-function displayMessage(goodMessage) {
-  document.getElementById("greeting").innerText = goodMessage;
+function greet(t) {
+    // let hour = t.split(":")[0]
+    let hour = t.replace(":", "")
+    if (hour < 1200) {
+      return "Good Morning"
+    } else if (hour > 1700) {
+      return "Good Evening"
+    } else{
+      return "Good Afternoon"
+    }
 }
 
+let displayMessage = (g) => {
+  document.querySelector("#greeting").innerHTML = g
+}
