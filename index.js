@@ -22,5 +22,5 @@ function greet(t) {
 }
 
 let displayMessage = (g) => {
-  document.querySelector("#greeting").innerHTML = g
+  document.getElementById("greeting").innerText = g
 }
